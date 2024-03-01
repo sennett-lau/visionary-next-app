@@ -7,7 +7,7 @@ const Header = () => {
       height={70}
       alignItems={'center'}
       px={3}
-      bg={'blanc.100'}
+      bg={'visionary.800'}
       width={'100%'}
       position={'fixed'}
       zIndex={100}

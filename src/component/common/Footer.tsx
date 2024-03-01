@@ -8,7 +8,14 @@ const Footer = () => {
       </Text>
       <Link href={'https://0xblanc.io'} isExternal={true} color={'blanc.200'}>
         <Flex alignItems={'center'}>
-          <Image src={'/assets/logo.svg'} alt={'logo'} width={'20px'} height={'20px'} ml={2} mr={1} />
+          <Image
+            src={'/assets/logo.svg'}
+            alt={'logo'}
+            width={'20px'}
+            height={'20px'}
+            ml={2}
+            mr={1}
+          />
           0xBlanc
         </Flex>
       </Link>

@@ -1,7 +1,6 @@
 import Header from '@/component/common/Header'
 import { Flex } from '@chakra-ui/react'
 import { FC, ReactNode } from 'react'
-import Footer from '@/component/common/Footer'
 
 type Props = {
   children: ReactNode
@@ -21,11 +20,10 @@ const AppLayout: FC<Props> = ({ children }) => {
         direction={'column'}
         align={'center'}
         justify={'center'}
+        bg={'visionary.900'}
       >
         {children}
       </Flex>
-
-      <Footer />
     </Flex>
   )
 }
