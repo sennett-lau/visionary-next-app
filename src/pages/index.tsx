@@ -1,4 +1,5 @@
-import { Flex, Text } from '@chakra-ui/react'
+import InputPanel from '@/component/panels/InputPanel'
+import { Flex } from '@chakra-ui/react'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { FC } from 'react'
@@ -42,14 +43,7 @@ const Home: FC<Props> = (props) => {
         height={'100%'}
         color={'visionary.900'}
       >
-        <Text
-          fontSize={'3xl'}
-          fontWeight={'bold'}
-          color={'visionary.100'}
-          mx={2}
-        >
-          Demo
-        </Text>
+        <InputPanel />
       </Flex>
     </>
   )
