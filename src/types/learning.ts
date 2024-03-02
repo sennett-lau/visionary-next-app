@@ -29,10 +29,49 @@ export interface ILeaningUserAnswer {
 }
 
 export interface ILearningState {
-  summary: ILearningSummary[]
-  quiz: ILearningQuiz[]
+  summaries: ILearningSummary[]
+  quizzes: ILearningQuiz[]
   currentSection: number
   revealedSections: number[]
   revealedQuestions: number[]
   userAnswers: ILeaningUserAnswer[]
+}
+
+export interface ILearningSetSummariesAction {
+  payload: {
+    summaries: ILearningSummary[]
+  }
+}
+
+export interface ILearningSetQuizzesAction {
+  payload: {
+    quizzes: ILearningQuiz[]
+  }
+}
+
+export interface ILearningSetCurrentSectionAction {
+  payload: {
+    currentSection: number
+  }
+}
+
+export interface ILearningAddRevealedSectionAction {
+  payload: {
+    section: number
+  }
+}
+
+export interface ILearningAddRevealedQuestionAction {
+  payload: {
+    section: number
+    question: number
+  }
+}
+
+export interface ILearningAddUserAnswerAction {
+  payload: {
+    section: number
+    question: number
+    answer: string
+  }
 }
