@@ -6,7 +6,7 @@ import {
   ILearningSetQuizzesAction,
   ILearningSetSummariesAction,
   ILearningState,
-} from '@/types/learning'
+} from '@/types'
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState: ILearningState = {

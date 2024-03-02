@@ -1,8 +1,12 @@
 import InputPanel from '@/component/panels/InputPanel'
+import LearningPanel from '@/component/panels/LearningPanel'
+import { RootState } from '@/store'
+import { PanelState } from '@/types'
 import { Flex } from '@chakra-ui/react'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { FC } from 'react'
+import { useSelector } from 'react-redux'
 
 export const getServerSideProps: GetServerSideProps = async () => {
   // for api call in server side
@@ -16,6 +20,10 @@ type Props = {
 }
 
 const Home: FC<Props> = (props) => {
+  const panelState = useSelector(
+    (state: RootState) => state.controlSlice.panelState,
+  )
+
   return (
     <>
       <Head>
@@ -43,7 +51,11 @@ const Home: FC<Props> = (props) => {
         height={'100%'}
         color={'visionary.900'}
       >
-        <InputPanel />
+        {
+          // Render different panel based on the state
+          panelState === PanelState.inputs && <InputPanel />
+        }
+        {panelState === PanelState.learning && <LearningPanel />}
       </Flex>
     </>
   )

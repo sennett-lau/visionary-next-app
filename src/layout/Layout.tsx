@@ -15,13 +15,7 @@ const AppLayout: FC<Props> = ({ children }) => {
       overflow={'hidden'}
     >
       <Header />
-      <Flex
-        flex={1}
-        direction={'column'}
-        align={'center'}
-        justify={'center'}
-        bg={'visionary.900'}
-      >
+      <Flex flex={1} pt={'100px'} bg={'visionary.900'}>
         {children}
       </Flex>
     </Flex>

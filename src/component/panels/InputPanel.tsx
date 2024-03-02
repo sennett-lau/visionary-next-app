@@ -29,9 +29,9 @@ const InputPanel = () => {
     }
 
     // if the link is already in links, return false
-    if (links.includes(link)) {
-      return false
-    }
+    // if (links.includes(link)) {
+    //   return false
+    // }
 
     return url.protocol === 'http:' || url.protocol === 'https:'
   }
