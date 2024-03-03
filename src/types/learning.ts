@@ -19,7 +19,9 @@ export interface ILearningQuizOption {
 
 export interface ILearningRevealedQuestion {
   section: number
-  question: number
+  questionNumber: number
+  userAnswer: string
+  quizAnswer: string
 }
 
 export interface ILeaningUserAnswer {
@@ -33,7 +35,7 @@ export interface ILearningState {
   quizzes: ILearningQuiz[]
   currentSection: number
   revealedSections: number[]
-  revealedQuestions: number[]
+  revealedQuestions: ILearningRevealedQuestion[]
   userAnswers: ILeaningUserAnswer[]
 }
 
@@ -64,7 +66,9 @@ export interface ILearningAddRevealedSectionAction {
 export interface ILearningAddRevealedQuestionAction {
   payload: {
     section: number
-    question: number
+    questionNumber: number
+    userAnswer: string
+    quizAnswer: string
   }
 }
 

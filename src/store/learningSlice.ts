@@ -35,15 +35,32 @@ const slice = createSlice({
       state.revealedSections.push(action.payload.section)
     },
     addRevealedQuestion(state, action: ILearningAddRevealedQuestionAction) {
-      state.revealedQuestions.push(action.payload.question)
+      const clone = [...state.revealedQuestions]
+      const existingIndex = clone.findIndex(
+        (rq) =>
+          rq.section === action.payload.section &&
+          rq.questionNumber === action.payload.questionNumber,
+      )
+      if (existingIndex !== -1) {
+        clone[existingIndex] = action.payload
+      } else {
+        clone.push(action.payload)
+      }
+      state.revealedQuestions = clone
     },
     addUserAnswer(state, action: ILearningAddUserAnswerAction) {
-      state.userAnswers = state.userAnswers.filter(
+      const clone = [...state.userAnswers]
+      const existingIndex = clone.findIndex(
         (ua) =>
-          ua.section !== action.payload.section &&
-          ua.question !== action.payload.question,
+          ua.section === action.payload.section &&
+          ua.question === action.payload.question,
       )
-      state.userAnswers.push(action.payload)
+      if (existingIndex !== -1) {
+        clone[existingIndex] = action.payload
+      } else {
+        clone.push(action.payload)
+      }
+      state.userAnswers = clone
     },
   },
 })
